@@ -4,7 +4,7 @@
 void ChatServer::onMessage(const TcpConnectionPtr &conn, 
                             Buffer *buffer, 
                             Timestamp time){
-    string buf = buffer->retrieveAllAsString();
+    string buf = buffer->retrieveAllAsString(); // FIXME : 分包支持
 
     json js = json::parse(buf);
 
@@ -19,12 +19,10 @@ void ChatServer::onConnection(const TcpConnectionPtr &conn){
             << conn->peerAddress().toIpPort() << " is "
             << (conn->connected() ? "UP" : "DOWN");
 
-    if (conn->connected())
-    {
-
-    }
-    else
-    {
+    if (conn->connected()){
+        // new connection
+    } else {
+        ChatService::instance()->clientCloseException(conn);
         conn->shutdown();
     }
 }
