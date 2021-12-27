@@ -6,11 +6,15 @@
 #include <unordered_map>
 #include <functional>
 #include <memory>
+#include <mutex>
 
 #include "json.hpp"
 
 #include "public.hh"
 #include "usermodel.hh"
+#include "groupmodel.hh"
+#include "offlinemessagemodel.hh"
+#include "friendmodel.hh"
 
 using namespace muduo; 
 using namespace muduo::net; 
@@ -18,26 +22,53 @@ using namespace std;
 
 using json = nlohmann::json;
 
-// 消息对应的回调
+// message handler type
 using MsgHandler = std::function<void(const TcpConnectionPtr , json &js, Timestamp )>;
 
-// 聊天服务器业务类
-// 解耦业务和网络
-// 单例
+// ! Decoupling services and networks
+// ! Singleton
 class ChatService{
     public:
-        // 获取单例
         static ChatService* instance();
 
-        void login(const TcpConnectionPtr &conn, json &js, Timestamp time);
 
         void reg(const TcpConnectionPtr &conn, json &js, Timestamp time);
 
+        void login(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+        void logout(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+
+        void addFriend(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+        void createGroup(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+        void joinGroup(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+
+        void oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
+        
+        void groupChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+
+        void clientCloseException(const TcpConnectionPtr &conn);
+
+        // reset Users state to offline
+        void reset();
+
         MsgHandler getHandler(int msgid);
+
     private:
         ChatService();
-        unordered_map<int,MsgHandler> _msgHandlerMap;
+        unordered_map<int,MsgHandler> _msgHandlerMap; // const after init
+
+        unordered_map<int,TcpConnectionPtr> _userConnMap; // ! shared by all threads
+        mutex _connMutex;
+
         UserModel _userModel;
+        OfflineMsgModel _offlineMsgModel;
+        FriendModel _friendModel;
+        GroupModel _groupeModel;
 };
 
 #endif /* CHATSERVICE */
