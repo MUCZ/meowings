@@ -24,4 +24,7 @@ const std::string offline = "offline";
 const std::string creator = "creator";
 const std::string normies = "normal";
 
+
+// server & client 
+const int chat_port = 6000;
 #endif /* PUBLIC */
