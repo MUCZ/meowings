@@ -8,25 +8,25 @@ using namespace std;
 
 class User{
 public:
-    User(std::string name="default_name", std::string pwd="default_pwd", std::string state=offline, int id = -1)
+    User(string name="default_name", string pwd="default_pwd", string state=offline, int id = -1)
     : _name(name),_password(pwd),_state(state),_id(id) 
     {
     }
 
     void setId(int id) { _id = id;}
-    void setName(std::string name) { _name = name;}
-    void setPwd(std::string pwd) { _password = pwd;}
-    void setState(std::string state) { _state = state;}
+    void setName(string name) { _name = name;}
+    void setPwd(string pwd) { _password = pwd;}
+    void setState(string state) { _state = state;}
 
-    int getId() { return _id;}
-    std::string getName() { return _name;}
-    std::string getPwd() { return _password;}
-    std::string getState() { return _state;}
+    int getId() const { return _id;}
+    string getName() const { return _name;}
+    string getPwd() const { return _password;}
+    string getState() const { return _state;}
 
 protected:
-    std::string _name;
-    std::string _password;
-    std::string _state;
+    string _name;
+    string _password;
+    string _state;
     int _id;
 };
 

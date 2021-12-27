@@ -1,14 +1,16 @@
 #ifndef USERMODEL
 #define USERMODEL
 #include "user.hh"
-// #include "user.hpp"
 
 class UserModel{
 public:
     bool insert(User &user);
 
-private:
+    User query(int id);
 
+    bool updateState(User user);
+
+    void resetState();
 };
 
 #endif /* USERMODEL */
