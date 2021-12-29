@@ -13,14 +13,17 @@ void OfflineMsgModel::insert(int userid, string&& msg){
 }
 
 
-void OfflineMsgModel::remove(int userid){
+bool OfflineMsgModel::remove(int userid){
     char sql[1024]{0};
-    sprintf(sql, "delete frome offlinemessage where userid=%d",userid);
+    sprintf(sql, "delete from offlinemessage where userid=%d",userid);
 
     MySQL mysql;
     if(mysql.connect()){
-        mysql.update(sql);
+        if(mysql.update(sql)){
+            return true;
+        }
     }
+    return false;
 }
 
 vector<string> OfflineMsgModel::retrieve(int userid){

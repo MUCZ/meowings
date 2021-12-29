@@ -14,6 +14,7 @@ ChatService::ChatService(){
 
     _msgHandlerMap.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat,this,_1,_2,_3)});
     _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat,this,_1,_2,_3)});
+    _msgHandlerMap.insert({RETRIEVAL_MSG, std::bind(&ChatService::retrieval,this,_1,_2,_3)});
 
 }
 
@@ -57,7 +58,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
             // re-login, user will be refused
             json response;
             response["msgid"] = LOGIN_MSG_ACK;
-            response["erron"] = 2;
+            response["errno"] = 2;
             response["errmsg"] = "this account is already online.";
             conn->send(response.dump());
         } else {
@@ -102,13 +103,13 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
             }
 
             // return groups lists
-            vector<Group> groupuserVec = _groupeModel.queryGroups(id);
+            vector<Group> groupuserVec = _groupModel.queryGroups(id);
             if(!groupuserVec.empty()){
                 vector<string> groups;
                 for(auto& g : groupuserVec){
                     json group_js;
                     group_js["id"] = g.getId();
-                    group_js["groupename"] = g.getName();
+                    group_js["groupname"] = g.getName();
                     group_js["groupdesc"] = g.getDesc();
                     vector<string> users_in_group;
                     for(auto &user : g.getUsers()){
@@ -122,6 +123,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
                     group_js["users"] = users_in_group;
                     groups.emplace_back(group_js.dump());
                 }
+                response["groups"]= groups;
             }
 
             conn->send(response.dump());
@@ -155,9 +157,20 @@ void ChatService::logout(const TcpConnectionPtr &conn, json &js, Timestamp time)
 
 void ChatService::addFriend(const TcpConnectionPtr &conn, json &js, Timestamp time){
     int userid = js["id"].get<int>();
-    int friendid = js["id"].get<int>();
+    int friendid = js["friendid"].get<int>();
 
-    _friendModel.insert(userid,friendid);
+    json response;
+    response["id"] = userid;
+    response["friendid"] = friendid;
+    response["msgid"] = ADD_FRIEND_MSG_ACK;
+    if(_friendModel.insert(userid,friendid)){
+        response["errno"] = 0;
+        response["errmsg"] = "";
+    } else {
+        response["errno"] = 1;
+        response["errmsg"] = "add friend fails";
+    }
+    conn->send(response.dump());
 }
 
 void ChatService::createGroup(const TcpConnectionPtr &conn, json &js, Timestamp time){
@@ -167,15 +180,42 @@ void ChatService::createGroup(const TcpConnectionPtr &conn, json &js, Timestamp 
 
     Group group(-1,name,desc);
 
-    if(_groupeModel.createGroup(group)){
-        _groupeModel.joinGroup(userid,group.getId(),creator);
-    } //! todo : add reply
+    json response;
+    response["msgid"] = CREATE_GROUP_MSG_ACK;
+    response["groupname"] = name;
+    response["userid"] = userid;
+    if(_groupModel.createGroup(group)){
+        response["groupid"] = group.getId();
+        if(_groupModel.joinGroup(userid,group.getId(),creator)){
+            response["errno"] = 0;
+            response["errmsg"] = "";
+        } else {
+            response["errno"] = 1;
+            response["errmsg"] = "group created buf user fails to join the group";
+        }
+    } else {
+        response["errno"] = 2;
+        response["errmsg"] = "fails to create group";
+    }
+    conn->send(response.dump());
 }
 
 void ChatService::joinGroup(const TcpConnectionPtr &conn, json &js, Timestamp time){
     int userid = js["id"].get<int>();
     int groupid = js["groupid"].get<int>();
-    _groupeModel.joinGroup(userid,groupid,normies);
+
+    json response;
+    response["msgid"] = JOIN_GROUP_MSG_ACK;
+    response["groupid"] = groupid;
+    response["userid"] = userid;
+    if(_groupModel.joinGroup(userid,groupid,normies)){
+        response["errno"] = 0;
+        response["errmsg"] = "";
+    } else {
+        response["errno"] = 1;
+        response["errmsg"] = "fails to join the group";
+    }
+    conn->send(response.dump());
 }
 
 
@@ -204,7 +244,7 @@ void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp ti
     int userid = js["id"].get<int>();
     int groupid = js["groupid"].get<int>();
 
-    vector<int> useridVec = _groupeModel.queryGroupUsers(userid,groupid);
+    vector<int> useridVec = _groupModel.queryGroupUsers(userid,groupid);
 
     lock_guard<mutex> lock(_connMutex);
     for(auto id : useridVec){
@@ -222,6 +262,71 @@ void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp ti
     }
 }
 
+void ChatService::retrieval(const TcpConnectionPtr &conn, json &js, Timestamp time){
+    // code here are basiclly same as login
+    // todo : try to reuse code
+    LOG_INFO << "receive update request"<< js.dump();
+    int id = js["id"].get<int>();
+    string pwd = js["password"];
+    User user = _userModel.query(id);
+    if(user.getId() == id && user.getPwd() == pwd){
+        assert(user.getState() == online);
+
+        json response;
+        response["msgid"] = RETRIEVAL_MSG_ACK;
+        response["errno"] = 0;
+        response["id"] = user.getId();
+        response["name"] = user.getName();
+
+        // return friends lists 
+        vector<User> userVec = _friendModel.query(id);
+        if(!userVec.empty()){
+            vector<string> friends;
+            for(const auto& f : userVec){
+                json people_js;
+                people_js["id"] = f.getId();
+                people_js["name"] = f.getName();
+                people_js["state"] = f.getState();
+                friends.emplace_back(people_js.dump());
+            }
+            response["friends"] = friends;
+        }
+
+        // return groups lists
+        vector<Group> groupuserVec = _groupModel.queryGroups(id);
+        if(!groupuserVec.empty()){
+            vector<string> groups;
+            for(auto& g : groupuserVec){
+                json group_js;
+                group_js["id"] = g.getId();
+                group_js["groupname"] = g.getName();
+                group_js["groupdesc"] = g.getDesc();
+                vector<string> users_in_group;
+                for(auto &user : g.getUsers()){
+                    json people_js;
+                    people_js["id"] =user.getId();
+                    people_js["name"] =user.getName();
+                    people_js["state"] =user.getState();
+                    people_js["role"] =user.getRole();
+                    users_in_group.emplace_back(people_js.dump());
+                }
+                group_js["users"] = users_in_group;
+                groups.emplace_back(group_js.dump());
+            }
+            response["groups"]= groups;
+        }
+
+        conn->send(response.dump());
+    } else {
+        // user don't exist or password wrong!
+        json response;
+        response["msgid"] = LOGIN_MSG_ACK;
+        response["id"] = user.getId();
+        response["errno"] = 1;
+        response["errmsg"] = "id or password invalid!";
+        conn->send(response.dump());
+    }
+}
 
 void ChatService::clientCloseException(const TcpConnectionPtr& conn){
     //! todo : 改成conn的context，避免查找
@@ -258,3 +363,5 @@ MsgHandler ChatService::getHandler(int msgid){
       return _msgHandlerMap[msgid];
     }
 }
+
+

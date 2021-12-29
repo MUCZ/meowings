@@ -21,7 +21,9 @@ group.getName().c_str(),group.getDesc().c_str());
 }
 
 
-void GroupModel::joinGroup(int userid,int groupid, string role){ 
+bool GroupModel::joinGroup(int userid,int groupid, string role){ 
+    //  todo : check group exist
+    //  fixme : check re-join
     char sql[1024]{0};
     sprintf(sql, "insert into groupuser values(%d,%d,'%s')",
             groupid,userid,role.c_str());
@@ -29,8 +31,10 @@ void GroupModel::joinGroup(int userid,int groupid, string role){
     if(mysql.connect()){
         if(mysql.update(sql)){
             LOG_INFO << "id "<<userid <<" join group " << groupid;
+            return true;
         }
     }
+    return false;
 }
 
 vector<Group> GroupModel::queryGroups(int userid){
@@ -67,7 +71,7 @@ b.userid = %d",userid);
     for(auto& g : groupVec){
         sprintf(sql, 
 "select \
-a.id, a.name, a.state, b.grouprole, \
+a.id, a.name, a.state, b.grouprole \
 from \
 user a inner join groupuser b \
 on \
@@ -83,7 +87,7 @@ b.groupid = %d",g.getId());
                 user.setName(row[1]);
                 user.setState(row[2]);
                 user.setRole(row[3]);
-                g.getUsers().emplace_back(USER);
+                g.getUsers().emplace_back(user);
             }
             mysql_free_result(res);
         }
@@ -96,7 +100,7 @@ vector<int> GroupModel::queryGroupUsers(int userid, int groupid){
     sprintf(sql, 
 "select userid \
 from \
-groupuser where groupid = %d and userid != %d", groupid,userid);
+groupuser where groupid = %d", groupid);
     vector<int> idVec;
     MySQL mysql;
     if(mysql.connect()){

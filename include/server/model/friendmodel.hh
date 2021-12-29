@@ -7,7 +7,7 @@ class FriendModel{
 
 public:
     // add friends
-    void insert(int userid, int friendid);
+    bool insert(int userid, int friendid);
 
     vector<User> query(int userid);
 

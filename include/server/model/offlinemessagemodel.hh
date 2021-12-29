@@ -10,7 +10,7 @@ class OfflineMsgModel {
 public:
     void insert(int userid, string&& msg);
 
-    void remove(int userid);
+    bool remove(int userid);
 
     vector<string> retrieve(int userid);
 };

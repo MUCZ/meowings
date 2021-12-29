@@ -3,16 +3,19 @@
 
 using namespace std;
 
-void FriendModel::insert(int userid,int friendid){
+bool FriendModel::insert(int userid,int friendid){
+    //  todo check whether friend exist
     char sql[1024]{0};
     sprintf(sql, "insert into friend values(%d,%d)",userid,friendid);
 
     MySQL mysql;
     if(mysql.connect()){
         if(mysql.update(sql)){
-            LOG_INFO << "id "<<userid <<" and id "<< friendid<< "become friends";
+            LOG_INFO << "id "<<userid <<" and id "<< friendid<< " become friends";
+            return true;
         }
     }
+    return false;
 
 }
 

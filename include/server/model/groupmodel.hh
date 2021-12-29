@@ -7,7 +7,7 @@ class GroupModel{
 
 public:
     bool createGroup(Group& group);
-    void joinGroup(int userid, int groupid, string role);
+    bool joinGroup(int userid, int groupid, string role);
     vector<Group> queryGroups(int userid);
     vector<int> queryGroupUsers(int userid, int groupid);
 

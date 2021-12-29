@@ -38,6 +38,7 @@ class ChatService{
 
         void logout(const TcpConnectionPtr &conn, json &js, Timestamp time);
 
+        void retrieval(const TcpConnectionPtr &conn, json &js, Timestamp time);
 
         void addFriend(const TcpConnectionPtr &conn, json &js, Timestamp time);
 
@@ -68,7 +69,7 @@ class ChatService{
         UserModel _userModel;
         OfflineMsgModel _offlineMsgModel;
         FriendModel _friendModel;
-        GroupModel _groupeModel;
+        GroupModel _groupModel;
 };
 
 #endif /* CHATSERVICE */

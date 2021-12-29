@@ -31,6 +31,7 @@ public:
     const string getName() const { return _name; }
     const string getDesc() const { return _desc; }
     vector<GroupUser> &getUsers() { return _users; }
+    const vector<GroupUser> &getUsers() const {return _users;}
 
 private:
     int _id;

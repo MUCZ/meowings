@@ -20,6 +20,7 @@ void ChatServer::onConnection(const TcpConnectionPtr &conn){
             << (conn->connected() ? "UP" : "DOWN");
 
     if (conn->connected()){
+        conn->setTcpNoDelay(tcpNoDelay_);
         // new connection
     } else {
         ChatService::instance()->clientCloseException(conn);

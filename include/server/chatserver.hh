@@ -20,8 +20,8 @@ using namespace std::placeholders;
 class ChatServer{
     public:
         ChatServer(EventLoop * loop, 
-                   const InetAddress& listenAddr)
-                : server_(loop,listenAddr,"MeowingServer")
+                   const InetAddress& listenAddr,bool tcpNoDelay = true)
+                : server_(loop,listenAddr,"MeowingServer"), tcpNoDelay_(tcpNoDelay)
                 {
                     server_.setConnectionCallback(
                         bind(&ChatServer::onConnection, this, _1));
@@ -31,7 +31,6 @@ class ChatServer{
         
 
         void setThreadNum(int numThreads){ server_.setThreadNum(numThreads);}
-
         void start()
         {
             server_.start();
@@ -42,6 +41,7 @@ class ChatServer{
         void onMessage(const TcpConnectionPtr &conn, Buffer* buffer,Timestamp time);
 
         TcpServer server_;
+        const bool tcpNoDelay_;
 };
 
 #endif /* CHATSERVER */
