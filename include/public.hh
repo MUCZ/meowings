@@ -31,5 +31,5 @@ const std::string normies = "normal";
 
 
 // server & client 
-const int chat_port = 8888;
+const int chat_port = 6000;
 #endif /* PUBLIC */
