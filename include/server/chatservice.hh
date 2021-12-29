@@ -10,6 +10,8 @@
 
 #include "json.hpp"
 
+#include "redis_interface.hh"
+
 #include "public.hh"
 #include "usermodel.hh"
 #include "groupmodel.hh"
@@ -59,6 +61,8 @@ class ChatService{
 
         MsgHandler getHandler(int msgid);
 
+        void handleRedisSubscribeMessage(int,string);
+
     private:
         ChatService();
         unordered_map<int,MsgHandler> _msgHandlerMap; // const after init
@@ -70,6 +74,8 @@ class ChatService{
         OfflineMsgModel _offlineMsgModel;
         FriendModel _friendModel;
         GroupModel _groupModel;
+
+        Redis _redis; // for cross-server communication
 };
 
 #endif /* CHATSERVICE */

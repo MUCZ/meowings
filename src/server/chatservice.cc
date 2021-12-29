@@ -16,6 +16,9 @@ ChatService::ChatService(){
     _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat,this,_1,_2,_3)});
     _msgHandlerMap.insert({RETRIEVAL_MSG, std::bind(&ChatService::retrieval,this,_1,_2,_3)});
 
+    if(_redis.connect()){
+        _redis.init_notify_handler(std::bind(&ChatService::handleRedisSubscribeMessage,this,_1,_2));
+    }
 }
 
 ChatService* ChatService::instance(){ 
@@ -69,6 +72,9 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
                 lock_guard<mutex> lock(_connMutex);                
                 _userConnMap.insert({id,conn});
             }
+            
+            // subscribe user id in redis
+            _redis.subscribe(id);
 
             user.setState(online);
             _userModel.updateState(user);
@@ -149,6 +155,9 @@ void ChatService::logout(const TcpConnectionPtr &conn, json &js, Timestamp time)
             _userConnMap.erase(it);
         }
     }
+
+    // unsubscribe user id in redis
+    _redis.unsubscribe(userid);
     
     User mock_user("","",offline,userid);
     _userModel.updateState(mock_user);
@@ -233,7 +242,8 @@ void ChatService::oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time
 
     User peer = _userModel.query(toid);
     if(peer.getState() == online){ // online && different server
-        //  redis 
+        //  send via redis 
+        _redis.publish(toid,js.dump());
     } else { // offline 
         _offlineMsgModel.insert(toid,js.dump());
     }
@@ -254,7 +264,8 @@ void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp ti
         } else {  
             User peer = _userModel.query(id);
             if(peer.getState() == online){ // online && different server
-                //  redis 
+                //  send via redis 
+                _redis.publish(peer.getId(),js.dump());
             } else { // offline 
                 _offlineMsgModel.insert(id,js.dump());
             }
@@ -343,6 +354,7 @@ void ChatService::clientCloseException(const TcpConnectionPtr& conn){
     }
 
     if(user.getId()!=-1){
+        _redis.unsubscribe(user.getId());
         user.setState(offline);
         _userModel.updateState(user);
     }
@@ -365,3 +377,14 @@ MsgHandler ChatService::getHandler(int msgid){
 }
 
 
+void ChatService::handleRedisSubscribeMessage(int userid, string msg){
+    lock_guard<mutex> lock(_connMutex);
+    // todo check logout code, block the client or not?
+    auto it = _userConnMap.find(userid);
+    if(it != _userConnMap.end()){
+        it->second->send(msg);
+        return;
+    }
+    // if user logout 
+    _offlineMsgModel.insert(userid,move(msg));
+}
