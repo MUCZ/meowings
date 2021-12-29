@@ -10,10 +10,15 @@ enum EnMsgType{
     REG_MSG_ACK ,
     LOGOUT_MSG , // 5 
     ADD_FRIEND_MSG,
+    ADD_FRIEND_MSG_ACK,
     CREATE_GROUP_MSG,
-    JOIN_GROUP_MSG,     
-    ONE_CHAT_MSG,
-    GROUP_CHAT_MSG // 10
+    CREATE_GROUP_MSG_ACK,
+    JOIN_GROUP_MSG,  // 10
+    JOIN_GROUP_MSG_ACK,  
+    ONE_CHAT_MSG, 
+    GROUP_CHAT_MSG,
+    RETRIEVAL_MSG,
+    RETRIEVAL_MSG_ACK
 };
 
 
@@ -26,5 +31,5 @@ const std::string normies = "normal";
 
 
 // server & client 
-const int chat_port = 6000;
+const int chat_port = 8888;
 #endif /* PUBLIC */
