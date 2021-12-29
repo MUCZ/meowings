@@ -3,6 +3,7 @@
 #include <vector>
 #include <map> 
 #include <string>
+#include <exception>
 
 using json = nlohmann::json;
 using namespace std;
@@ -37,7 +38,25 @@ int main(){
     cout << "receive: " << json_str<<endl;
 
     json js2_parsed = json::parse(json_str);
-    
+
+    // 允许空格、回车等
+    json js3_parsed = json::parse("{\"msgid\":4,\"id\":   540000  } \n");
+    cout << "allow some noise like \\n and space"  << js3_parsed.dump() <<endl;
+
+    // 可以使用find检查键
+    cout << "json above has id "<<(js3_parsed.find("id")!=js3_parsed.end() )<< endl;
+    cout << "json above has name "<<(js3_parsed.find("name")!=js3_parsed.end()) << endl;
+
+    // 反序列化get为string
+    json js_ex ;
+    js_ex["msg"] = "message";
+    string js_ex_str = js_ex.dump();  
+    json js_ex_r = json::parse( js_ex_str);
+    cout <<"use [\"tag\"] directly : "<< js_ex_r["msg"] << endl;
+    cout <<"use get<string> : "<< js_ex_r["msg"].get<string>()<< endl;
+
+
+
     // 单个变量
     auto name = js2_parsed["name"];
     cout << "name: " << name <<endl;
@@ -56,4 +75,16 @@ int main(){
         cout << x.first << " : " <<x.second<<endl;
     }
     cout <<endl;
+
+    // 多个json : 不行
+    try{
+        string two_js_str = js_ex.dump();
+        two_js_str += js_ex.dump();
+        cout << two_js_str <<endl;
+        json two_js = json::parse(two_js_str); 
+    } catch (exception E){
+        cout << E.what()<<endl;
+    }
+
+
 } 

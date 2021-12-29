@@ -1,0 +1,9 @@
+{ "msgid": 1, "id":13, "password":"123456" , "what": "登录13"}
+{ "msgid": 1, "id":15, "password":"666666" , "what": "登录15"}
+
+{ "msgid": 5, "id":13, "what": "退出"}
+
+{ "msgid": 9, "id":13, "toid":15, "msg":"hello from id = 13","what":"13->15"}
+{ "msgid": 9, "id":15, "toid":13, "msg":"hello from id = 15","what":"15->13"}
+
+{ "msgid": 7, "id":22, "groupname":"test_group", "groupdesc": "a fake group for test"}
