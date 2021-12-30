@@ -102,7 +102,9 @@ private:
     int ackWaited_{};
     json ack_;      
 
+    //fixme :user_ is shared variable !
     optional<User> user_;
+
     vector<User> friendList_;
     vector<Group> groupList_;
 };

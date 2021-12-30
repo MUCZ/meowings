@@ -68,6 +68,8 @@ class ChatService{
         unordered_map<int,MsgHandler> _msgHandlerMap; // const after init
 
         unordered_map<int,TcpConnectionPtr> _userConnMap; // ! shared by all threads
+        // todo : might be optimized @muduo:chat
+
         mutex _connMutex;
 
         UserModel _userModel;
@@ -76,6 +78,7 @@ class ChatService{
         GroupModel _groupModel;
 
         Redis _redis; // for cross-server communication
+        // todo : add auto-build support
 };
 
 #endif /* CHATSERVICE */
