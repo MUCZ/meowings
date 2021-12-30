@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+
+build/
+bin/
+.vscode/
+.VSCodeCounter/
+chat 
+chat.sql
+chatserver-master/
+ChatServer
+ChatClient.20*
