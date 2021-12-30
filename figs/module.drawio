@@ -1,0 +1,194 @@
+<mxfile host="65bd71144e">
+    <diagram id="76af5piWR8RFibzVsJao" name="第 1 页">
+        <mxGraphModel dx="1558" dy="2944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="148" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontFamily=小米兰亭;fontSize=46;strokeColor=#000000;fillColor=none;opacity=60;arcSize=11;" vertex="1" parent="1">
+                    <mxGeometry x="204" y="-20" width="1576" height="877.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=24;opacity=70;strokeColor=#36393d;fillColor=#f9f7ed;" vertex="1" parent="1">
+                    <mxGeometry x="255" y="160" width="855" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="&lt;b style=&quot;font-size: 31px;&quot;&gt;数据模块&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=31;fontFamily=小米兰亭;" parent="1" vertex="1">
+                    <mxGeometry x="625" y="165" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="数据库接口封装" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontFamily=小米兰亭;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="485" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="292.5" y="640" width="780" height="525" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Mysql.hh" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=25;glass=0;shadow=1;" parent="92" vertex="1">
+                    <mxGeometry y="-80" width="360" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Mysql&lt;br&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mysql_db_instance;fillColor=#2E73B8;gradientColor=none;fontSize=16;" parent="92" vertex="1">
+                    <mxGeometry x="150" y="271.23" width="60" height="64.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="&amp;lt;mysql/mysql.h&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;shadow=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="92" vertex="1">
+                    <mxGeometry x="105" y="30" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;fontFamily=小米兰亭;fontSize=18;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="92" source="27" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="connect()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;shadow=1;glass=0;fontFamily=小米兰亭;fontSize=18;size=-20;" parent="92" vertex="1">
+                    <mxGeometry x="3" y="-100" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="update()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;shadow=1;glass=0;fontFamily=小米兰亭;fontSize=18;size=-25;" parent="92" vertex="1">
+                    <mxGeometry x="125" y="-100" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="query()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;shadow=1;glass=0;fontFamily=小米兰亭;fontSize=18;size=-90;" parent="92" vertex="1">
+                    <mxGeometry x="247" y="-100" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 16px&quot;&gt;Redis&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.redis;strokeColor=#A50040;fontColor=#ffffff;fillColor=#B80000;fontSize=16;" parent="92" vertex="1">
+                    <mxGeometry x="570" y="272.73" width="60" height="63" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="300" y="200" width="400" height="510" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="FriendModel" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;shadow=1;" parent="93" vertex="1">
+                    <mxGeometry y="40" width="180" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="MessageModel" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;shadow=1;" parent="93" vertex="1">
+                    <mxGeometry x="180" y="40" width="180" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="对象关系映射(ORM)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=20;fontFamily=小米兰亭;" parent="93" vertex="1">
+                    <mxGeometry x="80" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="" style="group;shadow=1;" parent="93" vertex="1" connectable="0">
+                    <mxGeometry y="105" width="360" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="UserModel" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;shadow=1;" parent="61" vertex="1">
+                    <mxGeometry width="180" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="GroupModel" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;shadow=1;" parent="61" vertex="1">
+                    <mxGeometry x="180" width="180" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="" style="shape=arrow;endArrow=classic;html=1;dashed=1;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="479" y="390" as="sourcePoint"/>
+                        <mxPoint x="479" y="480" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="103" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="710" y="210" width="360" height="323" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Redis.hh" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=25;" parent="103" vertex="1">
+                    <mxGeometry y="50" width="360" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="&amp;lt;hiredis/hiredis.h&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;shadow=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="103" vertex="1">
+                    <mxGeometry x="105" y="160" width="155" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="publish()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;shadow=1;glass=0;fontFamily=小米兰亭;fontSize=18;size=-35;" parent="103" vertex="1">
+                    <mxGeometry x="125" y="30" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="subscribe()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;shadow=1;glass=0;fontFamily=小米兰亭;fontSize=18;size=-60;" parent="103" vertex="1">
+                    <mxGeometry x="247" y="30" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="connect()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;shadow=1;glass=0;fontFamily=小米兰亭;fontSize=18;size=-40;" parent="103" vertex="1">
+                    <mxGeometry x="3" y="30" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="Redis接口封装" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontFamily=小米兰亭;fontSize=20;" vertex="1" parent="103">
+                    <mxGeometry x="105" y="-10" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="1230" y="610" width="430" height="362.115" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="127" source="83" target="80">
+                    <mxGeometry x="-50" y="-63" as="geometry">
+                        <mxPoint x="160" y="190" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="118" value="" style="group;rotation=90;" vertex="1" connectable="0" parent="127">
+                    <mxGeometry x="24" y="75.77" width="400" height="258.73" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="网络" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_3;fillColor=#D2D3D3;gradientColor=none;shadow=1;glass=0;fontFamily=小米兰亭;fontSize=18;" parent="118" vertex="1">
+                    <mxGeometry x="150.87" y="235.73405857740588" width="79.5" height="54.22594142259414" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=24;strokeColor=#36393d;fillColor=#cce5ff;opacity=60;" vertex="1" parent="127">
+                    <mxGeometry width="430" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="&lt;b style=&quot;font-size: 30px;&quot;&gt;网络模块&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=30;fontFamily=小米兰亭;" vertex="1" parent="127">
+                    <mxGeometry x="145" y="15" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="144" value="" style="group" vertex="1" connectable="0" parent="127">
+                    <mxGeometry x="11" y="-202" width="400" height="166.67" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontFamily=小米兰亭;fontSize=24;strokeColor=#9673a6;fillColor=#e1d5e7;opacity=80;" vertex="1" parent="144">
+                    <mxGeometry width="400" height="166.67" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="nlohmann::json" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=24;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="144">
+                    <mxGeometry x="17.72093023255814" y="53.76633715585233" width="354.37209302325584" height="80.64547346010548" as="geometry"/>
+                </mxCell>
+                <mxCell id="125" value="编解码器" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=28;fontFamily=小米兰亭;fontStyle=1" vertex="1" parent="144">
+                    <mxGeometry x="139.53665559246951" y="9.411326752794322" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="" style="group" vertex="1" connectable="0" parent="127">
+                    <mxGeometry x="30" y="60" width="400" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="Reactor + One Loop per thread" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;fillColor=#eeeeee;strokeColor=#36393d;" parent="117" vertex="1">
+                    <mxGeometry y="63.12000000000002" width="276.9230769230769" height="63.11999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="Muduo::TcpServer" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="117">
+                    <mxGeometry width="369.23076923076917" height="63.12014345487148" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="Acceptor" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=18;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="117">
+                    <mxGeometry x="276.9230769230769" y="63.12000000000002" width="92.30769230769229" height="63.11999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=小米兰亭;fontSize=18;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="33" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="890" y="520" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="134" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="1140" width="610" height="385" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontFamily=小米兰亭;fontSize=24;strokeColor=#23445d;fillColor=#bac8d3;opacity=80;" vertex="1" parent="134">
+                    <mxGeometry y="10" width="610" height="375" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="group" vertex="1" connectable="0" parent="134">
+                    <mxGeometry x="27.727272727272727" y="27.5" width="554.5454545454546" height="329.99999999999994" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;b style=&quot;font-size: 31px;&quot;&gt;业务模块&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontFamily=小米兰亭;fontSize=31;" parent="108" vertex="1">
+                    <mxGeometry x="209.49582972582976" y="5.770246913580246" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="" style="group;fontSize=26;" vertex="1" connectable="0" parent="108">
+                    <mxGeometry y="68.74999999999999" width="554.5454545454546" height="261.24999999999994" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="&lt;font style=&quot;font-size: 26px&quot;&gt;ChatService&lt;br style=&quot;font-size: 26px&quot;&gt;&lt;br style=&quot;font-size: 26px&quot;&gt;&lt;br style=&quot;font-size: 26px&quot;&gt;&lt;br style=&quot;font-size: 26px&quot;&gt;&lt;br style=&quot;font-size: 26px&quot;&gt;&lt;br style=&quot;font-size: 26px&quot;&gt;&lt;br style=&quot;font-size: 26px&quot;&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;" parent="91" vertex="1">
+                    <mxGeometry width="554.5454545454546" height="261.24999999999994" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="login()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="180.22727272727278" y="68.74999999999999" width="146.95454545454547" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="logout()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="15.250000000000002" y="68.74999999999999" width="146.95454545454547" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="retrieval()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="350.75000000000006" y="68.74999999999999" width="146.95454545454547" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="creatgroup()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="203.7954545454546" y="123.75" width="146.95454545454547" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="groupChat()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="370.159090909091" y="123.75" width="146.95454545454547" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="addFriend()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="223.2045454545455" y="178.74999999999997" width="146.95454545454547" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="reg()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="36.04545454545455" y="123.75" width="146.95454545454547" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="oneChat()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="56.8409090909091" y="178.74999999999997" width="146.95454545454547" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="joinGroup()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=小米兰亭;fontSize=26;shadow=1;" parent="91" vertex="1">
+                    <mxGeometry x="392.3409090909092" y="178.74999999999997" width="148.34090909090912" height="68.74999999999999" as="geometry"/>
+                </mxCell>
+                <mxCell id="147" value="ChatServer" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=49;fontFamily=小米兰亭;" vertex="1" parent="1">
+                    <mxGeometry x="555" y="45" width="280" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
