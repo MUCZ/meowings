@@ -384,12 +384,23 @@ void ChatClient::onMessage(const TcpConnectionPtr &conn, Buffer *buffer, Timesta
     json js;
     try{ 
         js = json::parse(buf);
+        if(!js.contains("msgid")){
+            throw "json has not msgid field";
+        }
     } catch (exception e){
         LOG_ERROR << "parse error, message received: "<< buf ;
         cerr << "parse error, message received: " <<buf<<endl;
         return;
     }
     
+    // potential bug : cross talk 
+    // user logout while server already sent a msg to user
+    // todo : fix this, add ack ? user reply?
+    if(!user_.has_value() || (js.contains("id") && js["id"].get<int>() != user_->getId())){
+        // cross talk, ignore
+        return;
+    }
+
     if(js.contains("msgid") && js["msgid"].get<int>() == ackWaited_){
     // ack of a service : addfriend / joingroup / reg / logout
         ackCondition_.notify();
