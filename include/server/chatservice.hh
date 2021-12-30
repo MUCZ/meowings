@@ -64,21 +64,22 @@ class ChatService{
         void handleRedisSubscribeMessage(int,string);
 
     private:
-        ChatService();
+        ChatService(); // Singleton
         unordered_map<int,MsgHandler> _msgHandlerMap; // const after init
 
         unordered_map<int,TcpConnectionPtr> _userConnMap; // ! shared by all threads
         // todo : might be optimized @muduo:chat
-
         mutex _connMutex;
 
+        // mysql interface
         UserModel _userModel;
         OfflineMsgModel _offlineMsgModel;
         FriendModel _friendModel;
         GroupModel _groupModel;
 
+        // redis interface
         Redis _redis; // for cross-server communication
-        // todo : add auto-build support
+        // todo : is this thread safe? 
 };
 
 #endif /* CHATSERVICE */

@@ -49,6 +49,7 @@ public:
         return mysql_use_result(_conn);
     }
     MYSQL* getConnection(){ return _conn;}
+    // violate the layer principale
 
 private:
     MYSQL *_conn;

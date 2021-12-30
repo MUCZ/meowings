@@ -83,8 +83,10 @@ public:
     void showCurrentUserInfo() const;
 
 private:
+    // EventLoopThread
     void onConnection(const TcpConnectionPtr & conn);
 
+    // EventLoopThread
     void onMessage(const TcpConnectionPtr &conn, Buffer *buffer, Timestamp time);
 
     TcpClient client_;
@@ -95,15 +97,16 @@ private:
 
     const bool tcpNoDelay_;
 
-    CountDownLatch connectionCountDown_{1}; // connection_established
+    CountDownLatch connectionCountDown_{1}; // connection established
 
     MutexLock mutexForCondition_;
     Condition ackCondition_;
-    int ackWaited_{};
-    json ack_;      
+    int ackWaited_{}; // thread-safe is guaranteed 
+    json ack_; // thread-safe is guaranteed 
 
-    //fixme :user_ is shared variable !
     optional<User> user_;
+    mutex userMutex_;
+
 
     vector<User> friendList_;
     vector<Group> groupList_;
