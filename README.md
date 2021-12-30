@@ -1,10 +1,9 @@
 # meowings
-
-## 说明：
-
 <p align="center">
   <img src="https://github.com/MUCZ/meowings/blob/main/img/structure.png">
 </p>
+
+## 说明：
 
 - 一款由C++17开发的支持负载均衡的集群聊天服务器程序，单台机器支持xx台并发连接
 - 包括服务端代码和命令行客户端代码
