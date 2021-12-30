@@ -34,7 +34,7 @@
 ## Muduo框架：
 
 <p align="center">
-  <img src="https://github.com/MUCZ/meowings/blob/main/img/muduo.png">
+  <img src="https://github.com/MUCZ/meowings/blob/main/img/Muduo.png">
 </p>
 
 ## 依赖：
