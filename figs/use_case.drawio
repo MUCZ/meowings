@@ -1,0 +1,157 @@
+<mxfile host="65bd71144e">
+    <diagram id="ThFCF0TLdTxAYwLWlhu4" name="第 1 页">
+        <mxGraphModel dx="1676" dy="1129" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="82" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;fontSize=16;strokeWidth=1;arcSize=10;shadow=0;glass=0;strokeColor=#0e8088;fillStyle=cross-hatch;fillColor=#b0e3e6;opacity=20;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="1">
+                    <mxGeometry x="119" y="607.5" width="570" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;arcSize=13;strokeWidth=0.5;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="630" width="160" height="295" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" edge="1" parent="1" source="4" target="47">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="登录" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" parent="1" vertex="1">
+                    <mxGeometry x="344" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="注册" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" parent="1" vertex="1">
+                    <mxGeometry x="184" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="退出" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" parent="1" vertex="1">
+                    <mxGeometry x="504" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" edge="1" parent="1" source="18" target="45">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" parent="1" vertex="1">
+                    <mxGeometry x="384" y="120" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=20;fontFamily=小米兰亭;fontStyle=1" edge="1" parent="1" source="30" target="82">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="用户主界面" style="rhombus;whiteSpace=wrap;html=1;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" parent="1" vertex="1">
+                    <mxGeometry x="329" y="505" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" edge="1" parent="1" source="45" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" edge="1" parent="1" source="45" target="5">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="404" y="290"/>
+                            <mxPoint x="244" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" edge="1" parent="1" source="45" target="6">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="404" y="290"/>
+                            <mxPoint x="564" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="登陆界面" style="rhombus;whiteSpace=wrap;html=1;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="1">
+                    <mxGeometry x="329" y="190" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="" style="group;fontSize=16;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="344" y="410" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="显示离线消息" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=16;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="50">
+                    <mxGeometry x="-10" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="显示好友/群组" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=16;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="50">
+                    <mxGeometry x="-10" y="30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" edge="1" parent="1" source="48" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="" style="group;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="324" y="630" width="160" height="295" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;arcSize=13;strokeWidth=0.5;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="72">
+                    <mxGeometry width="160" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="单人聊天" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="72">
+                    <mxGeometry x="20" y="125" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="群组聊天" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="72">
+                    <mxGeometry x="20" y="45" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="聊天命令" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=20;fontStyle=1;fontFamily=小米兰亭;" vertex="1" parent="72">
+                    <mxGeometry x="30" y="10" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="登出" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="72">
+                    <mxGeometry x="20" y="230" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="" style="group;fillColor=#ffffff;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="504" y="630" width="160" height="295" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;fillColor=none;arcSize=13;strokeWidth=0.5;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="73">
+                    <mxGeometry width="160" height="295" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="添加好友" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="73">
+                    <mxGeometry x="20" y="45" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="加入群组" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="73">
+                    <mxGeometry x="20" y="125" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="创建群组" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="73">
+                    <mxGeometry x="20" y="205" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="管理命令" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=20;fontStyle=1;fontFamily=小米兰亭;" vertex="1" parent="73">
+                    <mxGeometry x="30" y="10" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="展示好友列表" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="675" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="展示命令列表" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="755" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="展示群组列表" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=17;fontFamily=Note Serif Simplified Chinese;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DNote%2BSerif%2BSimplified%2BChinese;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="835" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="展示命令" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=20;fontStyle=1;fontFamily=小米兰亭;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="640" width="100" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="30S0-C3_RQvMjclPQwhi" name="第 2 页">
+        <mxGraphModel dx="346" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-0"/>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-0"/>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-2" value="Log out" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="890" y="180" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-3" value="chat" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="890" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-4" value="group chat" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="890" y="490" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-5" value="add" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="890" y="590" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-6" value="join" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="890" y="690" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-7" value="Log out" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="890" y="180" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-8" value="能正常加，但是会重复加" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="1025" y="710" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-9" value="- client侧的日志问题&lt;br&gt;- client 侧的功能耦合&lt;br&gt;- client 侧存在代码复制" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="1050" y="340" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="QF6Dwuj1vJL0Yr1Qxa7Z-10" value="可以收到自己的group chat&lt;br&gt;多个chat放在一个包里的时候无法反序列化" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="QF6Dwuj1vJL0Yr1Qxa7Z-1">
+                    <mxGeometry x="1025" y="490" width="240" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
