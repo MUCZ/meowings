@@ -47,10 +47,11 @@ int main(int argc,char * argv[]){
     LOG_INFO << "pid = " << getpid();
 
     EventLoopThread loopThread;
-    // uint16_t port{};
+    
     uint16_t port = atoi(argv[1]);
     InetAddress serverAddr("127.0.0.1",port); 
     ChatClient client(loopThread.startLoop(), serverAddr);
+
     g_client = &client;
     client.connect();
     cout << "Meowings is a simple Chat application." << endl ;
