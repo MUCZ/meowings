@@ -142,6 +142,7 @@ void ChatClient::logout(){
             connection_->send(logout_js.dump());
             //! todo wait for ack ?
         }
+        lock_guard<mutex> lock(userMutex_);
         user_.reset(); 
     }
 }
@@ -208,6 +209,7 @@ int ChatClient::createGroup(string& name,string& desc){
 }
 
 void ChatClient::joinGroup(int groupid){
+    assertNotInLoopThread();
     assertOnline();
     for(const auto& g: groupList_){
         if(groupid==g.getId()){
@@ -251,6 +253,7 @@ void ChatClient::oneChat(int friendid,string& msg){
 
 
 void ChatClient::groupChat(int groupid,string& msg){
+    assertNotInLoopThread();
     json chat_msg;
     chat_msg["msgid"] = GROUP_CHAT_MSG;
     chat_msg["id"] = user_->getId();
@@ -380,6 +383,7 @@ void ChatClient::onConnection(const TcpConnectionPtr & conn){
 
 void ChatClient::onMessage(const TcpConnectionPtr &conn, Buffer *buffer, Timestamp time){
     // FIXME : 解决分包问题
+    assert(loop_->isInLoopThread());
     string buf = buffer->retrieveAllAsString();
     json js;
     try{ 
@@ -393,12 +397,15 @@ void ChatClient::onMessage(const TcpConnectionPtr &conn, Buffer *buffer, Timesta
         return;
     }
     
-    // potential bug : cross talk 
+    // potential bug : cross talk or message loss
     // user logout while server already sent a msg to user
     // todo : fix this, add ack ? user reply?
-    if(!user_.has_value() || (js.contains("id") && js["id"].get<int>() != user_->getId())){
-        // cross talk, ignore
-        return;
+    {
+        lock_guard<mutex> lock(userMutex_);
+        if(!user_.has_value() || (js.contains("id") && js["id"].get<int>() != user_->getId())){
+            // cross talk, ignore
+            return;
+        }
     }
 
     if(js.contains("msgid") && js["msgid"].get<int>() == ackWaited_){
