@@ -26,7 +26,8 @@ bool Redis::connect(){
         return false;
     }
 
-    thread t([&](){observer_channel_message();});
+    // a new thread to recivce redis message
+    thread t([&](){observer_channel_message();}); 
     t.detach();
     cout << "connect redis server sucess! "<< endl;
 
@@ -86,7 +87,6 @@ bool Redis::unsubscribe(int channel){
     }
     return true;
 }
-
 void Redis::observer_channel_message(){
     redisReply *reply = nullptr;
     while(REDIS_OK == redisGetReply(_subscribe_context,(void **)&reply)){

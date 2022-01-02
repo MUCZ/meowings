@@ -377,7 +377,7 @@ MsgHandler ChatService::getHandler(int msgid){
 }
 
 
-void ChatService::handleRedisSubscribeMessage(int userid, string msg){
+void ChatService::handleRedisSubscribeMessage(int userid, string msg){ // will be called in the redis thread
     lock_guard<mutex> lock(_connMutex);
     // todo check logout code, block the client or not?
     auto it = _userConnMap.find(userid);
