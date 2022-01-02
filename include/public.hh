@@ -18,7 +18,9 @@ enum EnMsgType{
     ONE_CHAT_MSG, 
     GROUP_CHAT_MSG,
     RETRIEVAL_MSG,
-    RETRIEVAL_MSG_ACK
+    RETRIEVAL_MSG_ACK, // 15
+    HEART_BEAT,
+    HEART_BEAT_ACK
 };
 
 
