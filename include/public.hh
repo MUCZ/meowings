@@ -20,7 +20,7 @@ enum EnMsgType{
     RETRIEVAL_MSG,
     RETRIEVAL_MSG_ACK, // 15
     HEART_BEAT,
-    HEART_BEAT_ACK
+    HEART_BEAT_ACK,
 };
 
 
