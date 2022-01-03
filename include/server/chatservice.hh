@@ -55,6 +55,8 @@ class ChatService{
 
 
         void clientCloseException(const TcpConnectionPtr &conn);
+        
+        void heartbeat(const TcpConnectionPtr &conn, json &js, Timestamp time);
 
         // reset Users state to offline
         void reset();
