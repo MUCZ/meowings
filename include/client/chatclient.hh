@@ -100,7 +100,7 @@ private:
     CountDownLatch connectionCountDown_{1}; // connection established
 
     MutexLock mutexForCondition_;
-    Condition ackCondition_;
+    Condition ackCondition_; // todo : use producer-consumer queue
     int ackWaited_{}; // thread-safe is guaranteed 
     json ack_; // thread-safe is guaranteed 
 

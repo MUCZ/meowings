@@ -224,7 +224,13 @@ void ChatClient::joinGroup(int groupid){
     connection_->send(join_group_js.dump());
     
     ackWaited_ = JOIN_GROUP_MSG_ACK;
-    ackCondition_.wait();
+
+    {
+        MutexLockGuard guard(mutexForCondition_); // condition should be use with mutex! 
+        // fixme : fix other uses of cond_ in this file
+        ackCondition_.wait();
+    }
+
     if(ack_["msgid"].get<int>() == JOIN_GROUP_MSG_ACK && ack_["errno"].get<int>() ==0){
         assert(ack_["groupid"].get<int>() == groupid);
         assert(ack_["userid"].get<int>() == user_->getId());
@@ -410,7 +416,10 @@ void ChatClient::onMessage(const TcpConnectionPtr &conn, Buffer *buffer, Timesta
 
     if(js.contains("msgid") && js["msgid"].get<int>() == ackWaited_){
     // ack of a service : addfriend / joingroup / reg / logout
-        ackCondition_.notify();
+        {
+            MutexLockGuard guard(mutexForCondition_);
+            ackCondition_.notify(); // cond_ should be used with mutex, fixme : fix use of condition in this file
+        }
         ack_ = js;
         ackWaited_ = 0;
         return;
