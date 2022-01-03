@@ -1,0 +1,110 @@
+<mxfile host="65bd71144e">
+    <diagram id="frZOwbjL739oKl73wMPu" name="第 1 页">
+        <mxGraphModel dx="1040" dy="835" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="58" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=24;strokeColor=#36393d;fillColor=#cce5ff;opacity=60;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="245" width="170" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontFamily=小米兰亭;fontSize=24;strokeColor=#23445d;fillColor=#bac8d3;opacity=80;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="240" width="150" height="143" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=24;opacity=70;strokeColor=#36393d;fillColor=#f9f7ed;" vertex="1" parent="1">
+                    <mxGeometry x="538.2" y="240" width="600" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="编码器+网络层传来的参数" style="edgeStyle=none;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontSize=13;" edge="1" parent="1" source="2" target="5">
+                    <mxGeometry x="0.0846" y="10" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="295" y="341.5"/>
+                        </Array>
+                        <mxPoint x="3" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="对象" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=13;" edge="1" parent="1" source="2" target="20">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="525" y="311.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=13;" edge="1" parent="1" source="2" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="发布" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="12">
+                    <mxGeometry x="0.2177" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-26" y="-13" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="业务层" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;" vertex="1" parent="1">
+                    <mxGeometry x="355" y="281.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;dashed=1;fontSize=13;" edge="1" parent="1" source="3" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Mysql数据层" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;" vertex="1" parent="1">
+                    <mxGeometry x="798.2" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" style="edgeStyle=none;html=1;dashed=1;fontSize=13;" edge="1" parent="1" source="4">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="978.2" y="410" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="Redis数据层" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;" vertex="1" parent="1">
+                    <mxGeometry x="798.2" y="380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="解码器+回调表" style="edgeStyle=none;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontSize=13;" edge="1" parent="1" source="5" target="2">
+                    <mxGeometry x="-0.0998" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="295" y="271.5"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="" style="edgeStyle=none;html=1;dashed=1;fontSize=13;" edge="1" parent="1" source="5" target="32">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="网络层" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;" vertex="1" parent="1">
+                    <mxGeometry x="125" y="265" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="数据库" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;fontSize=17;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="978.2" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="redis" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;fontSize=17;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="978.2" y="380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=13;" edge="1" parent="1" source="20" target="21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="ORM" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="1">
+                    <mxGeometry x="588.2" y="295" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="CRUD" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=13;" edge="1" parent="1" source="21" target="3">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="768.2" y="310"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="接口封装" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="1">
+                    <mxGeometry x="678.2" y="295" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=13;" edge="1" parent="1" source="26" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="&amp;nbsp;" style="edgeStyle=none;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;dashed=1;fontSize=13;" edge="1" parent="1" source="26" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="回调" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="35">
+                    <mxGeometry x="-0.3084" y="1" relative="1" as="geometry">
+                        <mxPoint x="-4" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="接口封装" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="1">
+                    <mxGeometry x="588.2" y="395" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="网络" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;fontSize=17;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="125" y="405" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
