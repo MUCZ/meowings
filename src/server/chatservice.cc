@@ -72,6 +72,10 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
             // record connection
             {
                 lock_guard<mutex> lock(_connMutex);                
+                if(_userConnMap.count(id)!=0){// user has logout && the server didn't receive the logout msg (yet)
+                    // todo : do the logout opration for id 
+                    // avoid cross talk
+                }
                 _userConnMap.insert({id,conn});
             }
             
