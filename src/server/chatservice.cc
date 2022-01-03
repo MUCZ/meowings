@@ -16,6 +16,8 @@ ChatService::ChatService(){
     _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat,this,_1,_2,_3)});
     _msgHandlerMap.insert({RETRIEVAL_MSG, std::bind(&ChatService::retrieval,this,_1,_2,_3)});
 
+    _msgHandlerMap.insert({HEART_BEAT, std::bind(&ChatService::heartbeat,this,_1,_2,_3)});
+
     if(_redis.connect()){
         _redis.init_notify_handler(std::bind(&ChatService::handleRedisSubscribeMessage,this,_1,_2));
     }
@@ -358,6 +360,14 @@ void ChatService::clientCloseException(const TcpConnectionPtr& conn){
         user.setState(offline);
         _userModel.updateState(user);
     }
+}
+
+void ChatService::heartbeat(const TcpConnectionPtr &conn,json &js, Timestamp time){
+    LOG_DEBUG<< "receive heartbeat" ;
+    json heartbeat_response;
+    heartbeat_response["msgid"] = HEART_BEAT_ACK;
+    heartbeat_response["time"] = Timestamp::now().toString();
+    conn->send(heartbeat_response.dump());
 }
 
 void ChatService::reset(){
